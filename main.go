@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net"
+	"strings"
 )
 
 func main()  {
@@ -25,6 +26,8 @@ func main()  {
 		fmt.Println("errBuf=", errBuf)
 		return
 	}
+	str := strings.ToUpper(string(buf[:n]))
+	conn.Write([]byte(str))
 	fmt.Println("buf = ", string(buf[:n]))
 	// 关闭
 	defer listener.Close()
