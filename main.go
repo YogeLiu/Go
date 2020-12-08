@@ -8,7 +8,7 @@ import (
 
 func main()  {
 	// 开启监听
-	listener, err := net.Listen("tcp", "127.0.0.1:8080")
+	listener, err := net.Listen("tcp", "0.0.0.0")
 	if err != nil {
 		fmt.Println("err=", err)
 		return
